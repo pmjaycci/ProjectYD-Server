@@ -1,0 +1,13 @@
+version: '3.8' #버전 설정
+
+services:
+  mysql:
+    container_name: log_db
+    image: mysql:8.0 # 컨테이너에서 사용하는 base image 지정
+    restart: always # 컨테이너 다운시 재시작 명령어
+    volumes: # -v 옵션과 동일
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=jaycci1@
+    ports: # -p 옵션과 동일
+      - "3334:3334"

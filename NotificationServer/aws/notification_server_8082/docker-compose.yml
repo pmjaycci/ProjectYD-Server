@@ -1,0 +1,10 @@
+version: '3.8' #버전 설정
+
+services:
+  notification_server:
+    container_name: notification_server
+    build:
+      context: .  # 현재 디렉토리를 사용하여 이미지 빌드
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
